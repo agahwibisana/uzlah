@@ -1,0 +1,51 @@
+LANJUT BESOK:
+[done]
+-penamaan:
+ object advance->request=create. jadi advancerequest renamq semua ke advance wkwwkwk termasuk nama filenya
+ FUNGSI EDIT HEADERNYA BELUM---UDAH!
+ dan add new item juga belom. -- udah!
+ delete item -- udah!
+ FUNGSI EDIT LINE ITEMNYA BELUM (V_advance_editts belum ada) -- UDAH!
+ DI ADVANCE REQUEST READ ALL/READ ONE->belum di filter yang bisa liat yg punya user terkait aja dan clearance level di bawahnya dia. --UDAH!
+ DI ADVANCE REQUEST READ ONE->belum di add jenjang approval, button approval belum ada --UDAH!
+ pas edit,cancel,delete_ts,update_ts,add_ts, belum direstrict ke yg buatnya. (ini restrictnya udah di read_one. karena kan dia ga bisa direct via url jadi aman) --udah!
+ yg di read_all, title2 yg masih satu clearance_level masih bisa liat punya yg lainnya. --udah, dibiarin aja.
+ (prereq: 1 employee only have 1 user and vice versa.
+        1 employee only have 1 title but title can be assigned to multiple employee.
+        approval structure->each employee have multiple approver including himself, usually limited by amount.)
+ pas create cek ada di approval group ga. kalo ga ada berarti deny --udah
+ terus gimana kalo yg create dia clearance level tertinggi? --udah (approved by dirinya sendiri)
+ read all modelnya get_advancenya udah betul --udah!
+ setiap create advance masukin ke approval table (as a draft sih,ini untuk biar ada state nya aja) --udah!
+ read one di get header model belum betul. -- udah!
+ tombol approval untuk akli masih ada di adv1,padahal belum diapprove welly. ini belum di-set. --udah!
+ ADA ACCIDENT. TERAKHIR HARUS SAMPE PERMASALAHAN APPROVE SAMA REJECT BELOM BISA DIBEDAIN --udah!
+ approval and reject -- udah!
+ reject if needed date < req date dan reject kalo total amt > limit advance.
+ role user, opr perm priv juga belom. user: pipih_, role: cashier,assign reg_emp and cashier to pipih_. -- udah!!
+ set to paid belum --udah!!
+ return advance juga belum (button di readone udah ada).. --udah!! note: ini dia request,belum settlement
+ paid date belum ada updatenya --udah!
+ settlement (button dan mvc nya belum ada)..lanjut!upload file bukti transfer/ngasih/nerima kas. abis itu yg update amount settle --udah!!
+ kasih tombol download doc settlement --udah!
+ create advance kalo ga ada di approval structure dia ga ada error -- udah!! apus trans db nya
+ kolom keterangan di read all->ini adv1 mesti gw apain? ini adv3 mesti gw apain? dst --udah!!
+ di create boleh input file proposal juga..--udah!!
+ GANTI notif kalo berhasil advance create: "has been suceful submitted. ENTER ITEMS! --udah!!
+ download button input attachment--udah!! 
+ pas edit juga bisa ganti attachment --udah!!
+ lanjut ke reimbursement abis itu siap demo. --UDAH!!
+ belum siap demo deng, bikin yg untuk general invoicenya juga--UDAH!!
+ edit ts, delete ts, pay--UDAH!!
+ masih unauthorized access yg reg employee mau download doc inv--UDAH!!
+
+[not done]
+<clear>!
+
+
+flow dan restriction advance antara status dan jenjang approval:
+all user can create their own respective advance
+a user can view->all advance yg sejajar/dibawah clearance_levelnya
+advance can only be edited,canceled,add new item,edit item,delete item, when status is draft and edited by its creator.
+once partially approved, cuman bisa terus diapprove sampe final atau direject.
+return hanya untuk status yg udah paid to employee.

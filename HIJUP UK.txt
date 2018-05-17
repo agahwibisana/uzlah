@@ -1,0 +1,18 @@
+untuk saat ini->
+reg_employee: bikin advace,reimbursement, dan invoice
+reg_employee adalah seorang admin di hijup uk.
+yg lain belum bisa dulu untuk bikin hal2 diatas.
+
+Approver ada Mba Welly, Mba Agia, dan Mas Akli untuk berbagai jenis request (diatur di Approval Structure).
+Di approval structure ada setting-an limit pengobatan, advance, dinas..dan ini akan diadjust sesuai kebijakan.
+Pipih sebagai kasir bertugas untuk menyatakan bahwa adv, reimb, dan inv telah dibayar/settle (upload bukti bayar juga).
+
+list user:
+reg_employee->Admin UK
+welly_
+akli_
+agia_
+pipih_
+
+semua password awalya 1234 dan bisa diganti masing-masing.
+Untuk administrasi dipegang admin dan superuser (untuk saat ini Agah yang pegang).
